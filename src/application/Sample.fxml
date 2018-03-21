@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+	<right>
+		<VBox prefHeight="200.0" prefWidth="100.0" spacing="10" BorderPane.alignment="CENTER">
+			<children>
+				<Label text="Hue Start" />
+				<Slider fx:id="hueStart" blockIncrement="1" max="180" min="0" value="20" />
+				<Label text="Hue Stop" />
+				<Slider fx:id="hueStop" blockIncrement="1" max="180" min="0" value="50" />
+				<Label text="Saturation Start" />
+				<Slider fx:id="saturationStart" blockIncrement="1" max="255" min="0" value="60" />
+				<Label text="Saturation Stop" />
+				<Slider fx:id="saturationStop" blockIncrement="1" max="255" min="0" value="200" />
+				<Label text="Value Start" />
+				<Slider fx:id="valueStart" blockIncrement="1" max="255" min="0" value="50" />
+				<Label text="Value Stop" />
+				<Slider fx:id="valueStop" blockIncrement="1" max="255" min="0" value="255" />
+			</children>
+		</VBox>
+	</right>
+	<bottom>
+		<VBox alignment="CENTER" spacing="15">
+			<children>
+				<Button fx:id="cameraButton" alignment="center" onAction="#startCamera" text="Start camera" />
+				<Separator />
+				<Label fx:id="hsvCurrentValues" />
+			</children>
+		</VBox>
+	</bottom>
+	<center>
+		<HBox alignment="CENTER" spacing="5">
+			<children>
+				<ImageView fx:id="originalFrame" fitHeight="300.0" fitWidth="200.0" />
+				<VBox alignment="CENTER" spacing="5">
+					<children>
+						<ImageView fx:id="maskImage" fitHeight="150.0" fitWidth="200.0" />
+						<ImageView fx:id="morphImage" fitHeight="150.0" fitWidth="200.0"/>
+					</children>
+				</VBox>
+			</children>
+		</HBox>
+	</center>
+</BorderPane>
